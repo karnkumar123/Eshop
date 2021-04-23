@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const chalk = require('chalk');
-const shoppingRoute = require('../backend/route/shopping');
+const shoppingRoute = require('./route/shopping');
 const path = require('path');
 
 const app = express();
