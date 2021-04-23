@@ -8,12 +8,13 @@ const path = require('path');
 
 const app = express();
 
-const port = process.env.port || 3000;
+const port = process.env.port || 8080;
 
 // adding middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/shops',shoppingRoute);
+
 
 // connecting to DB
 mongoose.connect('mongodb+srv://karn:Akira@786@shoppinglist.jdxzr.mongodb.net/shoppinglist?retryWrites=true&w=majority',
@@ -24,6 +25,10 @@ mongoose.connect('mongodb+srv://karn:Akira@786@shoppinglist.jdxzr.mongodb.net/sh
     })
 
 app.use(express.static(path.join(__dirname, '/public')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/index.html'));
+})
 
 app.get('/', (req, res) => {
     res.send('Hello Karan');
