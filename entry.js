@@ -8,7 +8,7 @@ const path = require('path');
 
 const app = express();
 
-const port = process.env.port || 8080;
+const PORT = process.env.port || 3000;
 
 // adding middleware
 app.use(cors());
@@ -33,6 +33,6 @@ app.get('*', (req, res) => {
 app.get('/', (req, res) => {
     res.send('Hello Karan');
 })
-app.listen(port, () => {
+app.listen(PORT, () => {
     console.log(chalk.black.bgGreen(`server is started at port ${port}`));
 })
