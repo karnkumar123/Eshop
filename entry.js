@@ -34,5 +34,5 @@ app.get('/', (req, res) => {
     res.send('Hello Karan');
 })
 app.listen(PORT, () => {
-    console.log(chalk.black.bgGreen(`server is started at port ${port}`));
+    console.log(chalk.black.bgGreen(`server is started at port ${PORT}`));
 })
